@@ -1,0 +1,31 @@
+{
+  "name": "PluginScanAndNotification",
+  "version": "0.0.1",
+  "description": "Cordova Device Plugin for scan Eddystone Beacons in background and notifies if find the specific Beacon",
+  "cordova": {
+    "id": "cordova-plugin-scan-and-notification",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bakebak/Plugin-Scan.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "scan-beacons",
+    "eddystone",
+    "scan-and-notification",
+    "bluetooth",
+    "cordova",
+    "beacon"
+  ],
+  "author": "Bruno Augusto Klein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bakebak/Plugin-Scan/issues"
+  },
+  "homepage": "https://github.com/bakebak/Plugin-Scan#readme"
+}

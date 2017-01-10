@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-scan-and-notification" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<name>ScanAndNotification</name>
+	<description>Cordova Device Plugin for scan Eddystone Beacons in background and notifies if find the specific Beacon</description>
+	<license>Apache 2.0</license>
+	<author>Bruno Klein</author>
+
+	<js-module name="PluginScanAndNotification" src="www/PluginScanAndNotification.js">
+		<clobbers target="cordova.plugins.PluginScanAndNotification" />
+	</js-module>
+		
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*" >
+			<feature name="PluginScanAndNotification">
+				<param name="android-package" value="br.com.digitaldesk.pluginscanandnotification.PluginScanAndNotification" />
+			</feature>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+			<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<receiver android:name="br.com.digitaldesk.pluginscanandnotification.BootBroadcastReceiver" >
+            	<intent-filter>
+                	<action android:name="android.intent.action.BOOT_COMPLETED" />
+            	</intent-filter>
+            </receiver>
+            <meta-data android:name="com.google.android.nearby.messages.API_KEY" android:value="AIzaSyB6BDzpPFB7MkBKgkcWS91cOe5qYqSG6Kw" />
+            <service android:name="br.com.digitaldesk.pluginscanandnotification.BackgroundSubscribeIntentService"
+            android:exported="false" />
+            <service android:name="br.com.digitaldesk.pluginscanandnotification.BackgroundStartScanService" />
+        </config-file>
+
+		<source-file src="src/android/PluginScanAndNotification.java" target-dir="src/br/com/digitaldesk/pluginscanandnotification" />
+		<source-file src="src/android/BackgroundStartScanService.java" target-dir="src/br/com/digitaldesk/pluginscanandnotification" />
+		<source-file src="src/android/BackgroundSubscribeIntentService.java" target-dir="src/br/com/digitaldesk/pluginscanandnotification" />
+		<source-file src="src/android/BootBroadcastReceiver.java" target-dir="src/br/com/digitaldesk/pluginscanandnotification" />
+		<source-file src="src/android/MainActivity.java" target-dir="src/br/com/digitaldesk/pluginscanandnotification" />
+		<source-file src="src/android/Utils.java" target-dir="src/br/com/digitaldesk/pluginscanandnotification" />
+		<framework src="src/android" custom="true" />
+	</platform>
+</plugin>
