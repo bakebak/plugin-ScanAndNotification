@@ -38,7 +38,6 @@
 		<source-file src="src/android/BackgroundStartScanService.java" target-dir="src/br/com/digitaldesk/pluginscanandnotification" />
 		<source-file src="src/android/BackgroundSubscribeIntentService.java" target-dir="src/br/com/digitaldesk/pluginscanandnotification" />
 		<source-file src="src/android/BootBroadcastReceiver.java" target-dir="src/br/com/digitaldesk/pluginscanandnotification" />
-		<source-file src="src/android/MainActivity.java" target-dir="src/br/com/digitaldesk/pluginscanandnotification" />
 		<source-file src="src/android/Utils.java" target-dir="src/br/com/digitaldesk/pluginscanandnotification" />
 		<framework src="src/android" custom="true" />
 	</platform>
