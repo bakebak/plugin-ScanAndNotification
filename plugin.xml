@@ -17,11 +17,6 @@
 			</feature>
 		</config-file>
 
-		<config-file target="AndroidManifest.xml" parent="/manifest">
-			<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-			<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-		</config-file>
-
 		<config-file target="AndroidManifest.xml" parent="/manifest/application">
 			<receiver android:name="br.com.digitaldesk.pluginscanandnotification.BootBroadcastReceiver" >
             	<intent-filter>
@@ -33,6 +28,11 @@
             android:exported="false" />
             <service android:name="br.com.digitaldesk.pluginscanandnotification.BackgroundStartScanService" />
         </config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+			<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+		</config-file>
 
 		<source-file src="src/android/PluginScanAndNotification.java" target-dir="src/br/com/digitaldesk/pluginscanandnotification" />
 		<source-file src="src/android/BackgroundStartScanService.java" target-dir="src/br/com/digitaldesk/pluginscanandnotification" />
